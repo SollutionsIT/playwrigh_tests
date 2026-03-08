@@ -5,7 +5,7 @@
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
 
 ## 📌 About
-This repository is a modern framework for end-to-end (E2E) automated testing of the **fylpi.at** web application. The project demonstrates Middle QA Automation approaches using rigorous architecture, design patterns, and continuous integration.
+This repository is a modern framework for end-to-end (E2E) automated testing of the **fylpi.at** web application. The project demonstrates Automation approaches using rigorous architecture, design patterns, and continuous integration.
 
 ## 🛠 Technology stack
 * **Framework:** Playwright
@@ -26,7 +26,7 @@ The project is divided into logical layers for ease of maintenance and scaling:
 Ensure that you have [Node.js](https://nodejs.org/) (version 18+) installed.
 Clone the repository and install dependencies:
 ```bash
-git clone [https://github.com/ТВОЙ_ЛОГИН/fylpi-auto-tests.git](https://github.com/ТВОЙ_ЛОГИН/fylpi-auto-tests.git)
+git clone [https://github.com/sollutionsit/fylpi-auto-tests.git](https://github.com/sollutionsit/fylpi-auto-tests.git)
 cd fylpi-auto-tests
 npm install
 npx playwright install --with-deps
@@ -41,14 +41,14 @@ npx playwright test --ui
 npx playwright show-report
 
 
-# 🚀 Example - E2E Test Automation Framework | fylpi.at
+''' # 🚀 Example - E2E Test Automation Framework | fylpi.at
 
 ![Playwright](https://img.shields.io/badge/Playwright-45ba4b?style=for-the-badge&logo=Playwright&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
 
 ## 📌 About
-Данный репозиторий представляет собой современный фреймворк для сквозного (E2E) автоматизированного тестирования веб-приложения **fylpi.at**. Проект демонстрирует подходы уровня Middle QA Automation с использованием строгой архитектуры, паттернов проектирования и непрерывной интеграции.
+Данный репозиторий представляет собой современный фреймворк для сквозного (E2E) автоматизированного тестирования веб-приложения **fylpi.at**. Проект демонстрирует подходы Automation с использованием строгой архитектуры, паттернов проектирования и непрерывной интеграции.
 
 ## 🛠 Технологический стек
 * **Фреймворк:** Playwright
@@ -68,8 +68,9 @@ npx playwright show-report
 ## 🚀 Как запустить локально
 Убедитесь, что у вас установлен [Node.js](https://nodejs.org/) (версия 18+).
 Склонируйте репозиторий и установите зависимости:
+
 ```bash
-git clone [https://github.com/ТВОЙ_ЛОГИН/fylpi-auto-tests.git](https://github.com/ТВОЙ_ЛОГИН/fylpi-auto-tests.git)
+git clone [https://github.com/sollutionsit/fylpi-auto-tests.git](https://github.com/sollutionsit/fylpi-auto-tests.git)
 cd fylpi-auto-tests
 npm install
 npx playwright install --with-deps
