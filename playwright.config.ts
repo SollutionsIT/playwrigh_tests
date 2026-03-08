@@ -9,7 +9,7 @@ export default defineConfig({
   testDir: './tests',
   
   // Запускать ли тесты параллельно в одном файле (true ускоряет прогон)
-  fullyParallel: true,
+  fullyParallel: false,
   
   // Запрещаем использовать test.only на CI/CD, чтобы случайно не пропустить остальные тесты
   forbidOnly: !!process.env.CI,
@@ -29,17 +29,22 @@ export default defineConfig({
   // Глобальные настройки для всех тестов
   use: {
     // Базовый URL. Теперь в тестах мы будем писать просто page.goto('/login')
-    baseURL: 'https://fylpi.at',
+    baseURL: 'https://test.fylpi.at',
 
     // Сбор трейсов (логов, скриншотов и видео) ТОЛЬКО при падении теста. 
     // Экономит место, но дает всю инфу для дебага.
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
-    
+ 
     // Автоматическое ожидание элементов (увеличим до 10 секунд для надежности)
     actionTimeout: 10000,
-  },
+    launchOptions: {
+      // Замедляет КАЖДОЕ действие Playwright на 500 миллисекунд (полсекунды)
+      slowMo: 500,
+  }
+}
+  ,
 
   // Настройка браузеров, в которых будем гонять тесты
   projects: [

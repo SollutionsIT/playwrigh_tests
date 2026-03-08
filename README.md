@@ -25,7 +25,7 @@ The project is divided into logical layers for ease of maintenance and scaling:
 ## 🚀 How to run locally
 Ensure that you have [Node.js](https://nodejs.org/) (version 18+) installed.
 Clone the repository and install dependencies:
-```bash
+bash
 git clone [https://github.com/sollutionsit/fylpi-auto-tests.git](https://github.com/sollutionsit/fylpi-auto-tests.git)
 cd fylpi-auto-tests
 npm install
@@ -41,7 +41,7 @@ npx playwright test --ui
 npx playwright show-report
 
 
-''' # 🚀 Example - E2E Test Automation Framework | fylpi.at
+# 🚀 Example - E2E Test Automation Framework | fylpi.at
 
 ![Playwright](https://img.shields.io/badge/Playwright-45ba4b?style=for-the-badge&logo=Playwright&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)

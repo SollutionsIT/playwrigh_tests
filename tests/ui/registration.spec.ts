@@ -17,12 +17,19 @@ test.describe('Регистрация нового пользователя на
       // В реальном проекте тут были бы вызовы методов из твоего Page Object, например:
       // await registrationPage.fillFirstName(randomUser.firstName);
       
-      // Но для примера покажем напрямую через локаторы:
-      await page.getByPlaceholder('Имя').fill(randomUser.firstName);
-      await page.getByPlaceholder('Фамилия').fill(randomUser.lastName);
-      await page.getByPlaceholder('Email').fill(randomUser.email);
-      await page.getByPlaceholder('Пароль').fill(randomUser.password);
-      
+      await page.getByPlaceholder('Email').pressSequentially(randomUser.email, { 
+      delay: 150 // Пауза 150 мс между каждой буквой (как при реальной печати)
+    });
+    await page.getByPlaceholder('Пароль').pressSequentially(randomUser.password, { 
+      delay: 100 // Пауза 150 мс между каждой буквой (как при реальной печати)
+    });
+    await page.getByPlaceholder('Имя').pressSequentially(randomUser.firstName, { 
+      delay: 150 // Пауза 150 мс между каждой буквой (как при реальной печати)
+    });
+    await page.getByPlaceholder('Фамилия').pressSequentially(randomUser.lastName, { 
+      delay: 100 // Пауза 150 мс между каждой буквой (как при реальной печати)
+    });
+
       await page.getByRole('button', { name: 'Зарегистрироваться' }).click();
     });
 
