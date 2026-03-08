@@ -1,0 +1,45 @@
+name: Playwright E2E Tests
+
+# 1. Триггеры: когда запускать тесты
+on:
+  push:
+    branches: [ main ] # При каждом пуше в ветку main
+  pull_request:
+    branches: [ main ] # При создании Pull Request
+  workflow_dispatch:   # Позволяет запускать тесты вручную из интерфейса GitHub
+
+jobs:
+  run-e2e-tests:
+    timeout-minutes: 15 # Защита от зависания тестов (чтобы не сжечь бесплатные минуты GitHub)
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Скачивание кода репозитория (Checkout)
+      uses: actions/checkout@v4
+
+    - name: Установка Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 18
+        cache: 'npm' # Кэшируем пакеты для ускорения будущих сборок
+
+    - name: Установка зависимостей проекта
+      run: npm ci
+
+    - name: Установка браузеров Playwright
+      run: npx playwright install --with-deps chromium # Ставим только Chromium для скорости
+
+    - name: Запуск автотестов
+      run: npx playwright test
+      env:
+        # Пробрасываем секреты из GitHub в тесты (замена локального файла .env)
+        TEST_USER_EMAIL: ${{ secrets.TEST_USER_EMAIL }}
+        TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
+
+    - name: Сохранение HTML-отчета
+      uses: actions/upload-artifact@v4
+      if: always() # Сохраняем отчет всегда, даже если тесты упали
+      with:
+        name: playwright-report
+        path: playwright-report/
+        retention-days: 14 # Храним отчет 2 недели
